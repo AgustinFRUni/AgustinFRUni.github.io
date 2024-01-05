@@ -1,0 +1,104 @@
+---
+import FirebaseIcon from "../icons/Firebase.astro";
+import FlutterIcon from "../icons/Flutter.astro";
+import MobXIcon from "../icons/MobX.astro";
+import RiverpodIcon from "../icons/Riverpod.astro";
+import SideIcon from "../icons/Side.astro";
+
+const TAGS = {
+    FIREBASE: {
+        name: "Firebase",
+        class: "bg-black text-white",
+        icon: FirebaseIcon
+    },
+    FLUTTER: {
+        name: "Flutter",
+        class: "bg-black text-white",
+        icon: FlutterIcon
+    },
+    RIVERPOD: {
+        name: "Riverpod",
+        class: "bg-black text-white",
+        icon: RiverpodIcon
+    },
+    MOBX: {
+        name: "MobX",
+        class: "bg-black text-white",
+        icon: MobXIcon
+    },
+};
+
+const EXPERIENCE = [
+    {
+        date: "March 2022",
+        title: "Marketing UI design in Figma",
+        description:
+            "All of the pages and components are first designed in parity between the two versions even as we update it.",
+    },
+    {
+        date: "March 2022",
+        title: "Marketing UI design in Figma",
+        description:
+            "All of the pages and components are first designed in parity between the two versions even as we update it.",
+    },
+    {
+        date: "March 2022",
+        title: "Marketing UI design in Figma",
+        description:
+            "All of the pages and components are first designed in parity between the two versions even as we update it.",
+    },
+];
+
+const PROJECTS = [
+    {
+        title: "Cafetería - Tienda en línea",
+        description: "Creé una app en Flutter para una cafetería virtual con inicio de sesión, lista de productos y carrito. Destaca mi habilidad en desarrollo móvil intuitivo. ¡Explora y compra con facilidad!",
+        github: "#",
+        image: "/projects/project1.webp",
+        tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.RIVERPOD],
+    },
+    {
+        title: "Chat online",
+        description: "Desarrollé una app en Flutter para un chat entre usuarios registrados. Permite iniciar sesión, ver conversaciones y enviar mensajes. ¡Conéctate fácilmente con esta aplicación!",
+        github: "https://github.com/AgustinFRUni/flutter-samples/tree/main/simple_chat",
+        image: "/projects/project2.webp",
+        tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.MOBX],
+    },
+];
+
+const SIDEPROJECTS = [
+    {
+        title: "Cafetería - Tienda en línea",
+        description: "Creé una app en Flutter para una cafetería virtual con inicio de sesión, lista de productos y carrito. Destaca mi habilidad en desarrollo móvil intuitivo. ¡Explora y compra con facilidad!",
+        github: "#",
+        image: "/projects/project1.webp",
+        tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.RIVERPOD],
+    },
+    {
+        title: "Chat online",
+        description: "Desarrollé una app en Flutter para un chat entre usuarios registrados. Permite iniciar sesión, ver conversaciones y enviar mensajes. ¡Conéctate fácilmente con esta aplicación!",
+        github: "https://github.com/AgustinFRUni/flutter-samples/tree/main/simple_chat",
+        image: "/projects/project2.webp",
+        tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.MOBX],
+    },
+];
+
+import ExperienceItem from "./ExperienceItem.astro";
+import ProjectsItem from "./ProjectsItem.astro";
+import SideProjectItem from "./SideProjectsItem.astro";
+---
+
+<ol class="relative border-s border-gray-200">
+    {
+        PROJECTS.map((project) => (
+            <li class="mb-10 ms-4 mt-50 ">
+                {" "}
+                <ProjectsItem {...project} />
+            </li>
+        ))
+    }
+
+
+
+</ol>
+

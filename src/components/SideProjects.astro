@@ -1,0 +1,99 @@
+---
+import FirebaseIcon from "../icons/Firebase.astro";
+import FlutterIcon from "../icons/Flutter.astro";
+import MobXIcon from "../icons/MobX.astro";
+import RiverpodIcon from "../icons/Riverpod.astro";
+
+const TAGS = {
+    FIREBASE: {
+        name: "Firebase",
+        class: "bg-black text-white",
+        icon: FirebaseIcon
+    },
+    FLUTTER: {
+        name: "Flutter",
+        class: "bg-black text-white",
+        icon: FlutterIcon
+    },
+    RIVERPOD: {
+        name: "Riverpod",
+        class: "bg-black text-white",
+        icon: RiverpodIcon
+    },
+    MOBX: {
+        name: "MobX",
+        class: "bg-black text-white",
+        icon: MobXIcon
+    },
+    KOTLIN: {
+        name: "Kotlin",
+        class: "bg-black text-white ",
+        icon: Kotlin
+    },
+};
+
+const EXPERIENCE = [
+    {
+        date: "March 2022",
+        title: "Marketing UI design in Figma",
+        description:
+            "All of the pages and components are first designed in parity between the two versions even as we update it.",
+    },
+    {
+        date: "March 2022",
+        title: "Marketing UI design in Figma",
+        description:
+            "All of the pages and components are first designed in parity between the two versions even as we update it.",
+    },
+    {
+        date: "March 2022",
+        title: "Marketing UI design in Figma",
+        description:
+            "All of the pages and components are first designed in parity between the two versions even as we update it.",
+    },
+];
+
+const SIDEPROJECTS = [
+    {
+        title: "Pokédex",
+        description: "Encuentra a tu compañero pokémon.",
+        github: "#",
+        image: "/projects/project5.webp",
+        tags: [TAGS.KOTLIN],
+        href: "#"
+    },
+    {
+        title: "Rastreador de gastos",
+        description: "Lleva nota de tus gastos.",
+        github: "#",
+        image: "/projects/project4.webp",
+        tags: [TAGS.FLUTTER, TAGS.RIVERPOD],
+        href: "https://github.com/AgustinFRUni/flutter-samples/tree/main/expense_tracker"
+    },
+    {
+        title: "Gira los dados",
+        description: "¿Qué número saldrá después?",
+        github: "#",
+        image: "/projects/project3.webp",
+        tags: [TAGS.FLUTTER],
+        href: "https://github.com/AgustinFRUni/flutter-samples/tree/main/dice_roller",
+    },
+];
+
+import ExperienceItem from "./ExperienceItem.astro";
+import ProjectsItem from "./ProjectsItem.astro";
+import SideProjectItem from "./SideProjectsItem.astro";
+import Kotlin from "../icons/Kotlin.astro";
+---
+
+
+<ul class="flex grid sm:grid-cols-1 lg:grid-cols-2 justify-center lg:mr-24">
+    {
+        SIDEPROJECTS.map((sideproject) => (
+            <li class="flex-row mb-10 ms-4 mt-50 ">
+                {" "}
+                <SideProjectItem {...sideproject} />
+            </li>
+        ))
+    }
+</ul>

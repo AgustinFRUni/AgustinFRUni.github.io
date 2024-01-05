@@ -1,0 +1,64 @@
+---
+import MailIcon from "../icons/Mail.astro";
+
+---
+
+<section class="">
+    <div class="py-8 lg:py-16 px-4 mx-auto max-w-[600px]">
+        <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-center text-orange-200/90"
+        >
+            Contáctame
+        </h2>
+        <p class="text-lg lg-text-xl mb-4 text-pretty max-w-[600px]">
+            ¿Quieres saber más de mi? ¡Enviame un mensaje!
+        </p>
+        <form action="https://formsubmit.co/agustinfruni@gmail.com" method="POST" class="space-y-8">
+            <div>
+                <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-300"
+                    >Correo</label
+                >
+                <input
+                    type="email"
+                    id="email"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-sm text-gray-900 rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5  placeholder-black  dark:focus:ring-primary-500 focus:border-primary-500 shadow-sm-light"
+                    placeholder="nombre@ejemplo.com"
+                    required
+                />
+            </div>
+            <div>
+                <label
+                    for="subject"
+                    class="block mb-2 text-sm font-mediumtext-gray-300"
+                    >Asunto</label
+                >
+                <input
+                    type="text"
+                    id="subject"
+                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500  placeholder-black  dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="¿De qué quieres saber?"
+                    required
+                />
+            </div>
+            <div class="sm:col-span-2">
+                <label
+                    for="message"
+                    class="block mb-2 text-sm font-medium placeholder-black"
+                    >Mensaje</label
+                >
+                <textarea
+                    id="message"
+                    rows="6"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:border-gray-600 placeholder-black focus:ring-primary-500 focus:border-primary-500"
+                    placeholder="Deja un comentario..."></textarea>
+            </div>
+            <button
+                type="submit"
+                class="rounded-full border: border-white/10 flex justify-center items-center gap-x-2 px-2 py-2 md:px-4 md:py-4 text-xs md:text-base hover:scale-110 hover:bg-white/5 transition"
+                ><MailIcon class="size-4 lg:size-6"/> Enviar mensaje</button
+            >
+        </form>
+    </div>
+</section>

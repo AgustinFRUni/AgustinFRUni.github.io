@@ -1,0 +1,35 @@
+---
+interface Props {
+    title: String;
+    description: String;
+    tags: { name: String; class: string; icon: any }[];
+    image: string;
+    href: string;
+}
+
+const { title, description, tags, image, href } = Astro.props;
+---
+
+
+
+<div class="max-w-[280px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <a href={href}>
+        <img class="rounded-t-lg" src={image} alt="" />
+    </a>
+    <div class="p-5">
+        <a href={href}>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
+        <ul class="flex gap-x-2 flex-row">
+            {tags.map((tag) => (
+                <li>
+                    <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
+                        <tag.icon class="size-2 lg:size-4" />
+                    </span>
+                </li>
+            ))}
+        </ul>
+    </div>
+</div>
+
