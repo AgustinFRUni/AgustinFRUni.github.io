@@ -7,12 +7,14 @@ import SocialPill from "../components/SocialPill.astro"
 import GitHubIcon from "../icons/Github.astro"
 import MailIcon from "../icons/Mail.astro"
 import Experience from "../components/Experience.astro"
+import Tecnologias from "../components/Tecnologias.astro"
 import CodeIcon from "../icons/Code.astro"
 import Projects from "../components/Projects.astro"
 import User from "../icons/User.astro"
 import SideProjects from "../components/SideProjects.astro"
 import Contacto from "../components/Contacto.astro"
 import Side from "../icons/Side.astro"
+import Radar from "../icons/Radar.astro"
 ---
 
 <Layout
@@ -41,8 +43,7 @@ import Side from "../icons/Side.astro"
       <h2 class="text-xl lg:text-2xl text-balance max-w-[700px]">
         <span class="text-orange-200/90">
 			Desarrollador Mobile y Web</span
-        >
-         .<span class="text-blue-200/90"> De Corrientes, Argentina</span>.
+        >.<span class="text-blue-200/90"> De Corrientes, Argentina</span>.
         <span class="text-white/90"
           >Especializado en aplicaciones móviles para Android/Kotlin | Flutter/Dart y Web
 		  FullStack.</span
@@ -84,6 +85,14 @@ import Side from "../icons/Side.astro"
 		</h4>
 		<SideProjects />
 	  </SectionContainer>
+
+    <SectionContainer>
+      <h4 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Radar class="size-7" />
+         Tech Stack
+      </h4>
+      <Tecnologias />
+      </SectionContainer>
 
 	  <SectionContainer id="contacto">
 		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">

@@ -1,0 +1,39 @@
+---
+import CSSIcon from "../icons/CSS.astro";
+import HTMLIcon from "../icons/HTML.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+
+const STACK = [
+    {
+        title: "HTML",
+        icon: HTMLIcon,
+    },
+    {
+        title: "CSS",
+        icon: CSSIcon,
+    },
+    {
+        title: "JavaScript",
+        icon: JavaScriptIcon,
+    },
+    {
+        title: "Tailwind",
+        icon: TailwindIcon,
+    },
+];
+---
+
+<ul class="flex">
+    {
+        STACK.map((tech) => (
+            <li class=" mb-4 ms-6 mt-50 justify-center">
+                <span class="text-sm">
+                    <tech.icon class="size-10 w-full" />
+
+                    {tech.title}
+                </span>
+            </li>
+        ))
+    }
+</ul>
