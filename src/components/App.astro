@@ -28,7 +28,7 @@ const i18n = getI18N({currentLocale})
   description={i18n.SEO_DESCRIPTION}
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-32">
+    <SectionContainer class="py-44 pb-32" id="sobre-mi">
       <img
         class="rounded-full size-12 mb-4"
         src="https://avatars.githubusercontent.com/u/117775443?v=4"
@@ -78,7 +78,7 @@ const i18n = getI18N({currentLocale})
     <SectionContainer id="proyectos">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-7" />
-         Proyectos
+         {i18n.PROJECTS_TITLE}
       </h2>
       <Experience />
     </SectionContainer>
@@ -86,7 +86,7 @@ const i18n = getI18N({currentLocale})
 	<SectionContainer>
 		<h4 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 		  <Side class="size-7" />
-		   Proyectos secundarios
+		   {i18n.SIDEPROJECTS_TITLE}
 		</h4>
 		<SideProjects />
 	  </SectionContainer>

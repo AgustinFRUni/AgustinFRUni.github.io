@@ -53,26 +53,31 @@ const EXPERIENCE = [
     },
 ];
 
+import { getI18N } from '../i18n/'
+
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
+
 const SIDEPROJECTS = [
     {
-        title: "Pokédex",
-        description: "Encuentra a tu compañero pokémon.",
+        title: i18n.SIDEPROJECT_1_TITLE,
+        description: i18n.SIDEPROJECT_1_DESCRIPTION,
         github: "#",
         image: "/projects/project5.webp",
         tags: [TAGS.KOTLIN],
         href: "#"
     },
     {
-        title: "Rastreador de gastos",
-        description: "Lleva nota de tus gastos.",
+        title: i18n.SIDEPROJECT_2_TITLE,
+        description: i18n.SIDEPROJECT_2_DESCRIPTION,
         github: "#",
         image: "/projects/project4.webp",
         tags: [TAGS.FLUTTER, TAGS.RIVERPOD],
         href: "https://github.com/AgustinFRUni/flutter-samples/tree/main/expense_tracker"
     },
     {
-        title: "Gira los dados",
-        description: "¿Qué número saldrá después?",
+        title: i18n.SIDEPROJECT_3_TITLE,
+        description: i18n.SIDEPROJECT_3_DESCRIPTION,
         github: "#",
         image: "/projects/project3.webp",
         tags: [TAGS.FLUTTER],

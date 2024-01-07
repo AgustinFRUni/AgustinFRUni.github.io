@@ -49,17 +49,22 @@ const EXPERIENCE = [
     },
 ];
 
+import { getI18N } from '../i18n/'
+
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
+
 const PROJECTS = [
     {
-        title: "Cafetería - Tienda en línea",
-        description: "Creé una app en Flutter para una cafetería virtual con inicio de sesión, lista de productos y carrito. Destaca mi habilidad en desarrollo móvil intuitivo. ¡Explora y compra con facilidad!",
+        title: i18n.PROJECT_1_TITLE,
+        description: i18n.PROJECT_1_DESCRIPTION,
         github: "#",
         image: "/projects/project1.webp",
         tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.RIVERPOD],
     },
     {
-        title: "Chat online",
-        description: "Desarrollé una app en Flutter para un chat entre usuarios registrados. Permite iniciar sesión, ver conversaciones y enviar mensajes. ¡Conéctate fácilmente con esta aplicación!",
+        title: i18n.PROJECT_2_TITLE,
+        description: i18n.PROJECT_2_DESCRIPTION,
         github: "https://github.com/AgustinFRUni/flutter-samples/tree/main/simple_chat",
         image: "/projects/project2.webp",
         tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.MOBX],
@@ -86,6 +91,7 @@ const SIDEPROJECTS = [
 import ExperienceItem from "./ExperienceItem.astro";
 import ProjectsItem from "./ProjectsItem.astro";
 import SideProjectItem from "./SideProjectsItem.astro";
+
 ---
 
 <ol class="relative border-s border-gray-200">
