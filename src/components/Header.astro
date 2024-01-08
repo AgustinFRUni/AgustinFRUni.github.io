@@ -6,15 +6,14 @@ import { getI18N } from '../i18n/'
 const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
 ---
-
-<header class="flex justify-center items-center py-3 w-full xl:w-[1120px] mx-auto text-center">
+<!-- backdrop-blur-sm z-10  fixed-->
+<header class="flex justify-center items-center py-3 w-full xl:w-[1120px] mx-auto text-center ">
     
 
-    <nav class="flex flex-row gap-x-10 opacity-80 content-center items-center">
+    <nav class="flex flex-row gap-x-10 opacity-80 content-center items-center xs:gap-x-3">
         <a href="#top">{i18n.HEADER_HOME}</a>
         <a href="#proyectos">{i18n.HEADER_PROJECTS}</a>
-        <a href="#sobre-mi">{i18n.HEADER_ABOUT}</a>
         <a href="#contacto">{i18n.HEADER_CONTACT}</a>
-        <LanguageSelector class="-mt-5" />
+        <LanguageSelector />
     </nav>
 </header>
