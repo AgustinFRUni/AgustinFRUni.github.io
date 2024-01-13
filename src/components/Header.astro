@@ -1,19 +1,43 @@
 ---
+import CloseIcon from "../icons/Close.astro"
+import MenuIcon from "../icons/Menu.astro"
 import LanguageSelector from "./LanguageSelector.astro";
 
-import { getI18N } from '../i18n/'
+import { getI18N } from "../i18n/";
 
-const {currentLocale} = Astro
-const i18n = getI18N({currentLocale})
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
-<!--fixed  -->
-<header class="flex  justify-center items-center py-3 w-full xl:w-[1120px] mx-auto text-center ">
-    
 
-    <nav class="flex flex-row gap-x-10 opacity-80 content-center items-center xs:gap-x-3 xs:block">
+<!--fixed <header
+    class="flex justify-center items-center py-3 w-full xl:w-[1120px] mx-auto text-center"
+>
+    <nav
+        class="flex flex-row gap-x-10 opacity-80 content-center items-center xs:gap-x-3 xs:block"
+    >
         <a href="#top">{i18n.HEADER_HOME}</a>
         <a href="#proyectos">{i18n.HEADER_PROJECTS}</a>
         <a href="#contacto">{i18n.HEADER_CONTACT}</a>
         <LanguageSelector />
     </nav>
+</header> -->
+
+
+<header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50">
+    <div class="max-w-7xl mx-auto flex items-center  gap-16 justify-end">
+        <nav
+            id="header-menu"
+            class="fixed w-full h-dvh inset-0 bg-[#151a36]/90 text-2xl flex flex-col items-center justify-center gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 md:static md:h-[initial] md:bg-[initial] md:text-xl md:flex-row md:translate-y-[initial]"
+            >
+            <a href="#top">{i18n.HEADER_HOME}</a>
+        <a href="#proyectos">{i18n.HEADER_PROJECTS}</a>
+        <a href="#contacto">{i18n.HEADER_CONTACT}</a>
+        <LanguageSelector class="invisible md:visible"/>
+            <a href="#header-nav" class="md:hidden absolute top-6 right-6">
+                <CloseIcon />
+            </a>
+        </nav>
+        <LanguageSelector class="md:hidden" />
+        <a href="#header-menu" class="md:hidden top-6 right-6"><MenuIcon /></a>
+    </div>
 </header>

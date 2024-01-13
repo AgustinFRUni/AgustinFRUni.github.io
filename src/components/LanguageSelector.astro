@@ -1,4 +1,8 @@
 ---
+interface Props {
+  class?: string;
+}
+
 import SpainFlag from "../icons/Spain.astro"
 import UnitedKingdomFlag from "../icons/UnitedKingdom.astro"
 import ChevronIcon from "../icons/Chevron.astro"
@@ -27,9 +31,11 @@ const currentLocaleData = LOCALES[currentLocale]
 const otherLocales = Object.values(LOCALES).filter(
   (locale) => locale.code !== currentLocale
 )
+
+const { class: className } = Astro.props;
 ---
 
-<div class="relative inline-block text-left">
+<div class={`relative inline-block text-left ${className}`} >
   <div
     class="group text-white rounded-md text-xs font-semibold bg-black/30 hover:bg-black/70 transition-all"
   >
