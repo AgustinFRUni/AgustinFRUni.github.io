@@ -3,7 +3,11 @@ import FirebaseIcon from "../icons/Firebase.astro";
 import FlutterIcon from "../icons/Flutter.astro";
 import MobXIcon from "../icons/MobX.astro";
 import RiverpodIcon from "../icons/Riverpod.astro";
-import SideIcon from "../icons/Side.astro";
+
+import { getI18N } from '../i18n/'
+
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
 
 const TAGS = {
     FIREBASE: {
@@ -28,32 +32,6 @@ const TAGS = {
     },
 };
 
-const EXPERIENCE = [
-    {
-        date: "March 2022",
-        title: "Marketing UI design in Figma",
-        description:
-            "All of the pages and components are first designed in parity between the two versions even as we update it.",
-    },
-    {
-        date: "March 2022",
-        title: "Marketing UI design in Figma",
-        description:
-            "All of the pages and components are first designed in parity between the two versions even as we update it.",
-    },
-    {
-        date: "March 2022",
-        title: "Marketing UI design in Figma",
-        description:
-            "All of the pages and components are first designed in parity between the two versions even as we update it.",
-    },
-];
-
-import { getI18N } from '../i18n/'
-
-const {currentLocale} = Astro
-const i18n = getI18N({currentLocale})
-
 const PROJECTS = [
     {
         title: i18n.PROJECT_1_TITLE,
@@ -70,27 +48,7 @@ const PROJECTS = [
         tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.MOBX],
     },
 ];
-
-const SIDEPROJECTS = [
-    {
-        title: "Cafetería - Tienda en línea",
-        description: "Creé una app en Flutter para una cafetería virtual con inicio de sesión, lista de productos y carrito. Destaca mi habilidad en desarrollo móvil intuitivo. ¡Explora y compra con facilidad!",
-        github: "#",
-        image: "/projects/project1.webp",
-        tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.RIVERPOD],
-    },
-    {
-        title: "Chat online",
-        description: "Desarrollé una app en Flutter para un chat entre usuarios registrados. Permite iniciar sesión, ver conversaciones y enviar mensajes. ¡Conéctate fácilmente con esta aplicación!",
-        github: "https://github.com/AgustinFRUni/flutter-samples/tree/main/simple_chat",
-        image: "/projects/project2.webp",
-        tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.MOBX],
-    },
-];
-
-import ExperienceItem from "./ExperienceItem.astro";
-import ProjectsItem from "./ProjectsItem.astro";
-import SideProjectItem from "./SideProjectsItem.astro";
+import ProjectsItem from "./ExperienceItem.astro";
 
 ---
 

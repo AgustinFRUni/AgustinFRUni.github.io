@@ -85,14 +85,12 @@ const SIDEPROJECTS = [
     },
 ];
 
-import ExperienceItem from "./ExperienceItem.astro";
-import ProjectsItem from "./ProjectsItem.astro";
 import SideProjectItem from "./SideProjectsItem.astro";
 import Kotlin from "../icons/Kotlin.astro";
 ---
 
 
-<ul class="flex grid sm:grid-cols-1 lg:grid-cols-2 justify-center lg:mr-24">
+<ul class=" grid sm:grid-cols-1 lg:grid-cols-2 justify-center lg:mr-24">
     {
         SIDEPROJECTS.map((sideproject) => (
             <li class="flex-row mb-10 ms-4 mt-50 ">

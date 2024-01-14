@@ -1,26 +1,84 @@
 ---
+import ProjectItem from "./ProjectItem.astro";
+import FirebaseIcon from "../icons/Firebase.astro";
+import FlutterIcon from "../icons/Flutter.astro";
+import MobXIcon from "../icons/MobX.astro";
+import RiverpodIcon from "../icons/Riverpod.astro";
+
+import { getI18N } from "../i18n";
+import Mobile from "../icons/Mobile.astro";
+import Web from "../icons/Web.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const TYPE = {
+    MOBILE: {
+        icon: Mobile,
+    },
+    WEB: {
+        icon: Web,
+    },
+};
+
+const TAGS = {
+    FIREBASE: {
+        name: "Firebase",
+        class: "bg-[#574422] text-white",
+        icon: FirebaseIcon,
+    },
+    FLUTTER: {
+        name: "Flutter",
+        class: "bg-[#2d207a] text-white",
+        icon: FlutterIcon,
+    },
+    RIVERPOD: {
+        name: "Riverpod",
+        class: "bg-[#1d5157] text-white",
+        icon: RiverpodIcon,
+    },
+    MOBX: {
+        name: "MobX",
+        class: "bg-[#223042] text-white",
+        icon: MobXIcon,
+    },
+};
+
 const PROJECTS = [
     {
-        title: "Project 1",
-        description: "Lorem ipsum",
+        title: i18n.PROJECT_1_TITLE,
+        description: i18n.PROJECT_1_DESCRIPTION,
         github: "#",
-        image: "https://via.placeholder.com/300x200",
-        tags: ["HTML", "CSS", "JavaScript"],
+        image: "/projects/project1.webp",
+        tags: [TAGS.FLUTTER, TAGS.FIREBASE, TAGS.RIVERPOD],
+        iconName: [TYPE.MOBILE],
+    },
+    {
+        title: i18n.PROJECT_2_TITLE,
+        description: i18n.PROJECT_2_DESCRIPTION,
+        github: "https://github.com/AgustinFRUni/flutter-samples/tree/main/simple_chat",
+        image: "/projects/project2.webp",
+        tags: [TAGS.FLUTTER, TAGS.FIREBASE, TAGS.MOBX],
+        iconName: [TYPE.MOBILE],
     },
 ];
 ---
 
-{
-    PROJECTS.map(({title, description, tags, image}) => (
-        <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <ul>
-                {tags.map((tag) => (
-                    <li>{tag}</li>
-                ))}
-            </ul>
-            <img src={image} alt={`Captura de pantalla del projecto ${image}`}/>
-        </article>
-    ))
-}
+<section
+    class={`w-full
+     gap-4
+     pb-20
+    lg:columns-2 md:columns-2 
+`}
+>
+<ul>
+    {
+        PROJECTS.map((project) => (
+            <li>
+                <ProjectItem {...project} />
+            </li>
+        ))
+    }
+</ul>
+    
+</section>

@@ -1,32 +1,29 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Badge from "../components/Badge.astro"
-import SectionContainer from "../components/SectionContainer.astro"
-import LinkedInIcon from "../icons/LinkedIn.astro"
-import SocialPill from "../components/SocialPill.astro"
-import GitHubIcon from "../icons/Github.astro"
-import MailIcon from "../icons/Mail.astro"
-import Experience from "../components/Experience.astro"
-import Tecnologias from "../components/Tecnologias.astro"
-import CodeIcon from "../icons/Code.astro"
-import Projects from "../components/Projects.astro"
-import User from "../icons/User.astro"
-import SideProjects from "../components/SideProjects.astro"
-import Contacto from "../components/Contacto.astro"
-import Side from "../icons/Side.astro"
-import Radar from "../icons/Radar.astro"
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../icons/Github.astro";
+import MailIcon from "../icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import Tecnologias from "../components/Tecnologias.astro";
+import BriefcaseIcon from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/Code.astro";
+import User from "../icons/User.astro";
+import SideProjects from "../components/SideProjects.astro";
+import Contacto from "../components/Contacto.astro";
+import Side from "../icons/Side.astro";
+import Radar from "../icons/Radar.astro";
 
-import { getI18N } from '../i18n/'
+import { getI18N } from "../i18n/";
+import Projects from "./Projects.astro";
 
-const {currentLocale} = Astro
-const i18n = getI18N({currentLocale})
-
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<Layout
-  title={i18n.SEO_TITILE}
-  description={i18n.SEO_DESCRIPTION}
->
+<Layout title={i18n.SEO_TITILE} description={i18n.SEO_DESCRIPTION}>
   <main class="px-4">
     <SectionContainer class="py-44 pb-32" id="sobre-mi">
       <img
@@ -37,7 +34,8 @@ const i18n = getI18N({currentLocale})
       <h1
         class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
       >
-     {i18n.INTRO_NAME} <a
+        {i18n.INTRO_NAME}
+        <a
           href="https://www.linkedin.com/in/agustin-fabian-rios/"
           target="_blank"
           rel="noopener"
@@ -47,62 +45,71 @@ const i18n = getI18N({currentLocale})
         </a>
       </h1>
       <h2 class="text-xl lg:text-2xl text-balance max-w-[700px]">
-        <span class="text-orange-200/90">
-			{i18n.INTRO_2NDLINE}</span
-        >.<span class="text-blue-200/90"> {i18n.INTRO_3RD_LINE}</span>.
-        <span class="text-white/90"
-          >{i18n.INTRO_4th_LINE}</span
+        <span class="text-orange-200/90"> {i18n.INTRO_2NDLINE}</span>.<span
+          class="text-blue-200/90"
         >
+          {i18n.INTRO_3RD_LINE}</span
+        >.
+        <span class="text-white/90">{i18n.INTRO_4th_LINE}</span>
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
         <SocialPill href="https://www.linkedin.com/in/agustin-fabian-rios/">
           <LinkedInIcon class="size-4 md:size-6" />
-           LinkedIn
+          LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/AgustinFRUni">
           <GitHubIcon class="size-4 md:size-6" />
-           GitHub
+          GitHub
         </SocialPill>
         <SocialPill href="mailto:agustinfruni@gmail.com">
           <MailIcon class="size-4 md:size-6" />
-           agustinfruni@gmail.com
+          agustinfruni@gmail.com
         </SocialPill>
-		<SocialPill href="https://drive.google.com/file/d/1EcmhAerjVUC4YgGStmtZJ-uCubhxRBPs/view">
-			<User class="size-4 md:size-6" />
-			 Mi CV
-		  </SocialPill>
+        <SocialPill
+          href="https://drive.google.com/file/d/1EcmhAerjVUC4YgGStmtZJ-uCubhxRBPs/view"
+        >
+          <User class="size-4 md:size-6" />
+          Mi CV
+        </SocialPill>
       </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        {i18n.EXPERIENCE_TITLE}
+      </h2>
+      <Experience />
     </SectionContainer>
 
     <SectionContainer id="proyectos">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-7" />
-         {i18n.PROJECTS_TITLE}
+        {i18n.PROJECTS_TITLE}
       </h2>
-      <Experience />
+      <Projects />
     </SectionContainer>
 
-	<SectionContainer>
-		<h4 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-		  <Side class="size-7" />
-		   {i18n.SIDEPROJECTS_TITLE}
-		</h4>
-		<SideProjects />
-	  </SectionContainer>
+    <SectionContainer>
+      <h4 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Side class="size-7" />
+        {i18n.SIDEPROJECTS_TITLE}
+      </h4>
+      <SideProjects />
+    </SectionContainer>
 
     <SectionContainer>
       <h4 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <Radar class="size-7" />
-         Tech Stack
+        Tech Stack
       </h4>
       <Tecnologias />
-      </SectionContainer>
+    </SectionContainer>
 
-	  <SectionContainer id="contacto">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-		</h2>
-		<Contacto />
-	  </SectionContainer>
+    <SectionContainer id="contacto">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"></h2>
+      <Contacto />
+    </SectionContainer>
   </main>
 </Layout>

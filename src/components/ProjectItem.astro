@@ -1,0 +1,68 @@
+---
+interface Props {
+  class?: string;
+  title: string;
+  description?: string;
+  tags: { name: String; class: string; icon: any }[];
+  image: string;
+  iconName: { icon: any }[];
+}
+
+const { title, description, tags, image, iconName } = Astro.props;
+---
+<article
+  class={`
+  ${Astro.props.class}
+  col-span-1
+  relative rounded-xl
+  backdrop-blur-md
+  border border-black/10
+  shadow-inner shadow-white/10
+  overflow-hidden
+  group mb-4
+`}
+>
+  <div
+    class="absolute bottom-0 top-0 z-10 h-auto w-full
+    bg-gradient-to-b from-[#292b39]/30 to-transparent via-[#292b39]/40 backdrop-blur-md"
+  >
+  </div>
+
+  <div
+    class="relative z-20 flex select-none flex-col gap-1 p-4 text-lg md:p-6 h-auto"
+  >
+    <div class="flex mb-10">
+      {iconName.map((iconName) => <iconName.icon class="size-12 lg:size-14" />)}
+      <h2
+        class="w-full h-full mx-4 text-center my-auto text-balance text-xl lg:text-2xl font-semibold text-orange-200"
+      >
+        {title}
+      </h2>
+    </div>
+
+    {
+      description && (
+        <h3 class="-mt-4 mb-4 text-lg lg-text-xl  text-pretty">
+          {description}
+        </h3>
+      )
+    }
+    <ul class="flex gap-x-2 flex-row mb-2">
+      {
+        tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-4 lg:size-6" />
+              {tag.name}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <slot name="content" />
+    <img src={image} />
+  </div>
+</article>
