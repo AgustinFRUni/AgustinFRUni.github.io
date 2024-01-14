@@ -1,0 +1,20 @@
+---
+const COMPANIES = [
+    {
+        name: "Distribuidora Corrientes",
+        icon: "/companies/distcor.png",
+    },
+];
+---
+
+<section>
+    <ul class="flex justify-center gap-4">
+        {
+            COMPANIES.map((companie) => (
+                <li class="mb-10 ms-4 mt-50">
+                    <img class="size-16" src={companie.icon} alt={`Logo de ${companie.name}`} />
+                </li>
+            ))
+        }
+    </ul>
+</section>
