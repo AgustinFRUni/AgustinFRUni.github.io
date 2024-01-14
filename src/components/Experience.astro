@@ -3,6 +3,11 @@ import FirebaseIcon from "../icons/Firebase.astro";
 import FlutterIcon from "../icons/Flutter.astro";
 import MobXIcon from "../icons/MobX.astro";
 import RiverpodIcon from "../icons/Riverpod.astro";
+import ProjectsItem from "./ExperienceItem.astro";
+import HTMLIcon from "../icons/HTML.astro";
+import CSSIcon from "../icons/CSS.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
 
 import { getI18N } from '../i18n/'
 
@@ -30,25 +35,38 @@ const TAGS = {
         class: "bg-black text-white",
         icon: MobXIcon
     },
+    HTML: {
+        name: "HTML",
+        class: "bg-[#574422] text-white",
+        icon: HTMLIcon
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#2d207a] text-white",
+        icon: CSSIcon
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-[#852f2a] text-white",
+        icon: AstroIcon
+    },
+    TAILWIND: {
+        name: "Tailwind",
+        class: "bg-[#003159] text-white",
+        icon: TailwindIcon
+    },
 };
 
 const PROJECTS = [
     {
-        title: i18n.PROJECT_1_TITLE,
-        description: i18n.PROJECT_1_DESCRIPTION,
-        github: "#",
-        image: "/projects/project1.webp",
-        tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.RIVERPOD],
-    },
-    {
-        title: i18n.PROJECT_2_TITLE,
-        description: i18n.PROJECT_2_DESCRIPTION,
-        github: "https://github.com/AgustinFRUni/flutter-samples/tree/main/simple_chat",
-        image: "/projects/project2.webp",
-        tags: [TAGS.FLUTTER ,TAGS.FIREBASE, TAGS.MOBX],
+        title: i18n.EXPERIENCIE_1_TITLE,
+        description: i18n.EXPERIENCIE_1_SUBTITLE,
+        link: "https://distribuidoracorrientes.vercel.app/",
+        image: "/experience/experience1.webp",
+        tags: [TAGS.HTML ,TAGS.CSS, TAGS.ASTRO, TAGS.TAILWIND],
     },
 ];
-import ProjectsItem from "./ExperienceItem.astro";
+
 
 ---
 
