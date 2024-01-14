@@ -2,7 +2,7 @@
 interface Props {
   class?: string;
   title: string;
-  description?: string;
+  description: string;
   tags: { name: String; class: string; icon: any }[];
   image: string;
   iconName: { icon: any }[];
@@ -40,13 +40,9 @@ const { title, description, tags, image, iconName } = Astro.props;
       </h2>
     </div>
 
-    {
-      description && (
         <h3 class="-mt-4 mb-4 text-lg lg-text-xl  text-pretty">
           {description}
         </h3>
-      )
-    }
     <ul class="flex gap-x-2 flex-row mb-2">
       {
         tags.map((tag) => (
