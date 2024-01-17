@@ -21,7 +21,7 @@ const { title, description, tags, image } = Astro.props;
                 <ul class="flex gap-x-2 flex-row">
                     {tags.map((tag) => (
                         <li>
-                            <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
+                            <span class={`items-center flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
                                 <tag.icon class="size-4 lg:size-6" />
                                 {tag.name}
                             </span>
