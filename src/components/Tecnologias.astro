@@ -54,15 +54,12 @@ const STACK = [
 ];
 ---
 
-<ul class="flex">
+<ul class="flex flex-row flex-wrap">
     {
         STACK.map((tech) => (
-            <li class=" mb-4 ms-6 mt-50 items-center">
-                <div class="text-center text-sm lg:text-base">
-                    <tech.icon class={`size-10 w-full mb-2"`}/>
-                        {tech.title}
-                    
-                </div>
+            <li class="col-span-1 mb-4 ms-6 mt-50 text-center text-sm lg:text-base">
+                <tech.icon class={`size-10 w-full mb-2`} />
+                {tech.title}
             </li>
         ))
     }
